@@ -14,12 +14,61 @@
       </div>
     </header>
     <main>
-      <div class="skaiciuotuvas">
-        <div class="atsakymas"></div>
-        <div class="mygtukai">
-
+      <form class="skaiciuotuvas" id="skaiciuotuvas" autocomplete="off" aria-label="Skaičiuotuvas">
+        <div class="ekranas">
+          <div class="ekranas-virsus">
+            <button type="button" class="ikona" data-action="history" aria-label="Istorija" aria-expanded="false" aria-controls="istorija">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </button>
+            <button type="button" class="ikona" data-action="undo" aria-label="Atšaukti paskutinį veiksmą">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+            </button>
+          </div>
+          <p class="reiskinys" id="reiskinys"></p>
+          <output class="atsakymas" id="atsakymas" aria-live="polite">0</output>
+          <p class="pranesimas" id="pranesimas" role="alert"></p>
         </div>
-      </div>
+
+        <section class="istorija" id="istorija" hidden>
+          <h2>Istorija</h2>
+          <p class="istorija-tuscia" id="istorijaTuscia">Skaičiavimų dar nėra</p>
+          <ol class="istorija-sarasas" id="istorijosSarasas"></ol>
+          <button type="button" class="istorija-valyti" data-action="clear-history">Išvalyti istoriją</button>
+        </section>
+
+        <div class="mygtukai">
+          <button type="button" class="mokslinis" data-fn="square" aria-label="Kelti kvadratu">x²</button>
+          <button type="button" class="mokslinis" data-op="^" aria-label="Kelti laipsniu">xʸ</button>
+          <button type="button" class="mokslinis" data-fn="sqrt" aria-label="Kvadratinė šaknis">√x</button>
+          <button type="button" class="mokslinis" data-fn="inverse" aria-label="Atvirkštinis skaičius">1/x</button>
+          <button type="button" class="mokslinis" data-fn="percent" aria-label="Procentai">%</button>
+          <button type="button" class="mokslinis" data-fn="negate" aria-label="Keisti ženklą">±</button>
+
+          <button type="button" class="funkcija valyti" data-action="clear" aria-label="Išvalyti">C</button>
+          <button type="button" class="funkcija" data-action="open" aria-label="Atidaryti skliaustus">(</button>
+          <button type="button" class="funkcija" data-action="close" aria-label="Uždaryti skliaustus">)</button>
+          <button type="button" class="operatorius" data-op="/" aria-label="Dalyti">÷</button>
+
+          <button type="button" class="skaicius" data-digit="7">7</button>
+          <button type="button" class="skaicius" data-digit="8">8</button>
+          <button type="button" class="skaicius" data-digit="9">9</button>
+          <button type="button" class="operatorius" data-op="*" aria-label="Dauginti">×</button>
+
+          <button type="button" class="skaicius" data-digit="4">4</button>
+          <button type="button" class="skaicius" data-digit="5">5</button>
+          <button type="button" class="skaicius" data-digit="6">6</button>
+          <button type="button" class="operatorius" data-op="-" aria-label="Atimti">−</button>
+
+          <button type="button" class="skaicius" data-digit="1">1</button>
+          <button type="button" class="skaicius" data-digit="2">2</button>
+          <button type="button" class="skaicius" data-digit="3">3</button>
+          <button type="button" class="operatorius" data-op="+" aria-label="Sudėti">+</button>
+
+          <button type="button" class="skaicius" data-action="dot" aria-label="Kablelis">.</button>
+          <button type="button" class="skaicius" data-digit="0">0</button>
+          <button type="button" class="lygu" data-action="equals" aria-label="Lygu">=</button>
+        </div>
+      </form>
     </main>
     <footer>&copy; 2026 Skaičiuotuvas. Visos teisės saugomos.</footer>
   </body>
